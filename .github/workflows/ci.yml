@@ -15,7 +15,7 @@ jobs:
         run: |
             tag=$(date +%s)
             echo "TAG=$tag" >> $GITHUB_OUTPUT
-            docker build . --tag srisudarsans/tw-infracubator:problem2-$TAG
+            docker build . --tag srisudarsans/tw-infracubator:problem2-$tag
         shell: bash
 
       - name: Push to docker registry
