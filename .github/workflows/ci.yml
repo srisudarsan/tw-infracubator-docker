@@ -1,0 +1,25 @@
+name: Docker Assignment CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build docker image
+	id: build
+	working-directory: problem2
+        run: |
+	  tag=$(date +%s)
+	  echo "TAG=$tag" >> $GITHUB_OUTPUT
+	  docker build . --tag srisudarsans/tw-infracubator:problem2-$TAG
+
+      - name: Push to docker registry
+	run: echo "We can push to docker registry from here if needed, not doing it for now"
+
+      - name: Cleanup
+	run: docker rmi --force ${{ steps.build..outputs.TAG }}
