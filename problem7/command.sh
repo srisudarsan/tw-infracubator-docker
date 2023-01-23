@@ -1,0 +1,1 @@
+docker run -i -v ${PWD}:/app -w /app srisudarsans/tw-infracubator:alpine-base env > env.txt
