@@ -13,7 +13,7 @@ jobs:
       - name: Build docker image
         id: build
         working-directory: problem2
-            run: |
+        run: |
           tag=$(date +%s)
           echo "TAG=$tag" >> $GITHUB_OUTPUT
           docker build . --tag srisudarsans/tw-infracubator:problem2-$TAG
