@@ -13,9 +13,10 @@ jobs:
         id: build
         working-directory: problem2
         run: |
-          tag=$(date +%s)
-          echo "TAG=$tag" >> $GITHUB_OUTPUT
-          docker build . --tag srisudarsans/tw-infracubator:problem2-$TAG
+            tag=$(date +%s)
+            echo "TAG=$tag" >> $GITHUB_OUTPUT
+            docker build . --tag srisudarsans/tw-infracubator:problem2-$TAG
+        shell: bash
 
       - name: Push to docker registry
 	    run: echo "We can push to docker registry from here if needed, not doing it for now"
