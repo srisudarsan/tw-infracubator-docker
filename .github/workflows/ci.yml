@@ -22,4 +22,4 @@ jobs:
         run: echo "We can push to docker registry from here if needed, not doing it for now"
 
       - name: Cleanup
-        run: docker rmi --force ${{ steps.build.outputs.TAG }}
+        run: docker rmi --force srisudarsans/tw-infracubator:problem2-${{ steps.build.outputs.TAG }}
