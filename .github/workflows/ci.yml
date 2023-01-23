@@ -19,7 +19,7 @@ jobs:
         shell: bash
 
       - name: Push to docker registry
-	    run: echo "We can push to docker registry from here if needed, not doing it for now"
+        run: echo "We can push to docker registry from here if needed, not doing it for now"
 
       - name: Cleanup
-	    run: docker rmi --force ${{ steps.build..outputs.TAG }}
+        run: docker rmi --force ${{ steps.build..outputs.TAG }}
